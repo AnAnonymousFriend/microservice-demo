@@ -45,7 +45,7 @@ func buildStamp(w http.ResponseWriter, req *http.Request) {
 
 func main() {
 
-	log.Println("Hello, welcome to the microservice world. welcome to zadig test")
+	log.Println("Hello, welcome to the microservice world. welcome to zadig test1")
 
 	http.HandleFunc("/", hello)
 	http.HandleFunc("/api/buildstamp", buildStamp)
