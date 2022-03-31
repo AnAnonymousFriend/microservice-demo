@@ -2,6 +2,6 @@ FROM ubuntu:14.04
 
 WORKDIR /workspace
 
-COPY backend /workspace/backend
+ADD backend /workspace/backend
 
 CMD [ "./backend" ]
