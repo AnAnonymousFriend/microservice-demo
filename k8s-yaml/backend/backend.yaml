@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: ccr.ccs.tencentyun.com/koderover-public/backend:latest
+          image: 10.3.70.150:5000/zadig/microservice-demo-backend:latest
           imagePullPolicy: Always 
           command:
             - /workspace/backend
