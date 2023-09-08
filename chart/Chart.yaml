@@ -1,6 +1,6 @@
 apiVersion: v2
-name: chart
-description: golang vue.js project
+name: voting-app
+description: multi microservice project
 
 # A chart can be either an 'application' or a 'library' chart.
 #
