@@ -2,20 +2,35 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-ingressClass: kr-nginx
-Backend:
-  replicaCount: 1
-  image:
-    repository: ccr.ccs.tencentyun.com/koderover-public/backend
-    tag: "latest"
+imagePullPolicy: Always 
+imagePullSecretsName: default-registry-secret
 
-Frontend:
-  replicaCount: 1
-  image: 
-    repository: ccr.ccs.tencentyun.com/koderover-public/frontend
-    tag: "latest"
+services:
+  vote:
+    port: 5000
+    image: koderover.tencentcloudcr.com/koderover-demo/examplevotingapp-vote:base
+    replicas: 1
 
-domain: demo.domain.com
-port: 20219
+  result:
+    port: 5001
+    image: koderover.tencentcloudcr.com/koderover-demo/examplevotingapp-result:base
+    replicas: 1
 
-registrySecret: ""
+  worker:
+    image: koderover.tencentcloudcr.com/koderover-demo/examplevotingapp-worker:base
+    replicas: 1
+
+  redis:
+    port: 6379
+    image: redis:alpine
+    replicas: 1
+
+  db:
+    port: 5432
+    image: postgres:9.4
+    replicas: 1
+
+resources:
+  limits:
+    cpu: 50m
+    memory: 50Mi
