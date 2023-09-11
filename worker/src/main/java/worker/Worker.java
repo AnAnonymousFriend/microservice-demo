@@ -23,6 +23,7 @@ public class Worker implements CommandLineRunner {
     LOG.info("STARTING THE APPLICATION");
     SpringApplication.run(Worker.class, args);
     LOG.info("APPLICATION FINISHED");
+    LOG.info("run starte......");
   }
 
   @Override
