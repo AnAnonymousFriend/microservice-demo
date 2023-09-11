@@ -28,6 +28,8 @@ public class Worker implements CommandLineRunner {
   @Override
   public void run(String... strings) throws Exception {
     try {
+      LOG.info("run starte......");
+
       Jedis redis = connectToRedis("redis");
       Connection dbConn = connectToDB("db");
 
@@ -43,6 +45,7 @@ public class Worker implements CommandLineRunner {
         updateVote(dbConn, voterID, vote);
       }
     } catch (SQLException e) {
+      LOG.info("Error:",e);
       e.printStackTrace();
       System.exit(1);
     }
