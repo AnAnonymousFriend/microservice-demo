@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Install our requirements.txt
 ADD requirements.txt /app/requirements.txt
-RUN pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+RUN pip install -r requirements.txt 
 
 # Copy our code from the current folder to /app inside the container
 ADD . /app
