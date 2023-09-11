@@ -1,0 +1,8 @@
+# Spring
+spring:
+  application:
+    # 应用名称
+    name: demo
+  profiles:
+    #    # 环境配置
+    active: dev
