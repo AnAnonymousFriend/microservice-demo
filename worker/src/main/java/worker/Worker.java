@@ -27,8 +27,9 @@ public class Worker implements CommandLineRunner {
 
   @Override
   public void run(String... strings) throws Exception {
+    LOG.info("run starte......");
     try {
-      LOG.info("run starte......");
+
 
       Jedis redis = connectToRedis("redis");
       Connection dbConn = connectToDB("db");
